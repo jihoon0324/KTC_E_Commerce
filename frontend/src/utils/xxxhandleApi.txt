@@ -1,0 +1,32 @@
+//example    js 파일로 만들것
+const getAllNotice = async () => {
+  try {
+    const { data } = await axios.get(
+      "http://vast-island-14964.herokuapp.com/notice"
+    );
+
+    setNoticeList(data);
+  } catch (error) {
+    console.log("handleSubmit Error");
+  }
+};
+
+const addNotice = async () => {
+  const message = {
+    userId: user._id,
+    content: newNotice.content,
+    title: newNotice.title,
+  };
+
+  try {
+    const res = await axios.post(
+      "http://vast-island-14964.herokuapp.com/notice/add",
+      {
+        message,
+      }
+    );
+    setNewNotice(initNotice);
+  } catch (error) {
+    console.log(error);
+  }
+};
