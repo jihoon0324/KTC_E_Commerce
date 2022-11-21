@@ -1,13 +1,8 @@
 const mongoose = require("mongoose");
 
 module.exports = () => {
-  const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  };
-
   mongoose
-    .connect(process.env.MONGODB_URL, connectionParams)
+    .connect(process.env.MONGODB_URL)
     .then(() => console.log("Connected To MongoDB ......"))
     .catch((err) => console.log(err));
 };
