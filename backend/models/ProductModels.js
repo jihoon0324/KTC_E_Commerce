@@ -11,29 +11,24 @@ const ProductSchema = new mongoose.Schema({
   },
   photoUrl: {
     type: String,
-    ref: "User",
     required: true,
   },
   content: {
     type: String,
-    ref: "User",
     required: true,
   },
   totalQty: {
     type: Number,
-
     required: true,
   },
   orderQty: {
     type: Number,
-    required: true,
   },
-  category_Id: {
+  category: {
     type: mongoose.Types.ObjectId,
     ref: "Category",
     required: true,
   },
-
 });
 
 const Product = mongoose.model("Product", ProductSchema);
