@@ -1,17 +1,13 @@
 const mongoose = require("mongoose");
 // category:  블라우스, 드레스, 바지 
 const CategorySchema = new mongoose.Schema({
-  blouse: {
+  categoryName: {
     type: String,
     required: true,
   },
-  dress: {
-    type: String,
-    required: true,
-  },
-  pants: {
-    type: String,
-    required: true,
+  product: {
+    type: mongoose.Types.ObjectId,
+    ref: "Product",
   },
 });
 
