@@ -5,6 +5,7 @@ const cors = require('cors');
 
 // !Router
 const UserRouter = require('./routers/UserRouters');
+const OrderRouter = require('./routers/OrderRouters');
 
 //!  for local port connect
 require('dotenv').config();
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use('/user', UserRouter);
+app.use('/order', OrderRouter);
 
 // app.use("/api/products", ProductRouters);
 // app.listen(PORT, (res, req) => {
