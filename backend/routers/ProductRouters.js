@@ -1,11 +1,12 @@
-import express from "express";
+const express = require("express");
 
-const router = express.Router();
-import {
+const productRouter = express.Router();
+
+const {
   updateProduct,
   deleteProduct,
-} from "../controller/ProductController.js";
+} = require("../controller/ProductController");
 
 productRouter.route("/:id").put(updateProduct).delete(deleteProduct);
 
-module.exports = router;
+module.exports = productRouter;
