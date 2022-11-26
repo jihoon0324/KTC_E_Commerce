@@ -4,6 +4,7 @@ const cors = require("cors");
 // !Router
 const UserRouter = require("./routers/UserRouters");
 const productRouter = require("./routers/ProductRouters");
+const OrderRouter = require("./routers/OrderRouters");
 
 //!  for local port connect
 require("dotenv").config();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
+app.use("/order", OrderRouter);
 app.use("/user", UserRouter);
 app.use("/api/products", productRouter);
 

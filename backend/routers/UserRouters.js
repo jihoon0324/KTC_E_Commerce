@@ -3,11 +3,13 @@ const userRouter = Router();
 const {
   registerUser,
   loginUser,
-  //   updateUser,
+  loggedInUserInfo,
+  updateUser,
 } = require('../controller/UserController');
 
 userRouter.post('/register', registerUser);
-userRouter.post('/login', loginUser);
-// userRouter.get('/update', updateUser);
+userRouter.post('/loginUser', loginUser);
+userRouter.post('/loggedInUserInfo', loggedInUserInfo);
+userRouter.post('/update', updateUser);
 
 module.exports = userRouter;
