@@ -15,5 +15,24 @@ exports.deleteProduct = async (req, res) => {
 };
 
 //Update product
-//put /api/products/:id
-exports.updateProduct = async (req, res) => {};
+//PUT /api/products/:id
+exports.updateProduct = async (req, res) => {
+  const { productName, price, photoUrl, content, totalQty, category } =
+    req.body;
+
+  const product = await Product.findById(req.params.id);
+  try {
+    product.productName = productName;
+    product.price = price;
+    product.photoUrl = photoUrl;
+    product.content = content;
+    product.totalQty = totalQty;
+    product.category = category;
+
+    const updateProduct = await product.save();
+    res.json(updateProduct);
+  } catch (error) {
+    res.satatus(404);
+    return console.log(error);
+  }
+};
