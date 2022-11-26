@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 //user: 회원이름, 아이디, 비밀번호, 주소, 휴대폰번호, 이메일, 어드민인지아닌지
 const UserSchema = new mongoose.Schema({
   name: {
@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
     lowercase: true,
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Please fill a valid email address",
+      'Please fill a valid email address',
     ],
   },
   phone: {
@@ -38,6 +38,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
