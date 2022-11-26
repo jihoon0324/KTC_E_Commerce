@@ -4,7 +4,7 @@
   "description": "",
   "main": "Server.js",
   "scripts": {
-    "server": "node Server.js"
+    "server": "nodemon Server.js"
   },
   "author": "",
   "license": "ISC",
