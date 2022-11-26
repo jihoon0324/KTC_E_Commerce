@@ -37,3 +37,40 @@ module.exports.loginUser = async (req, res) => {
     console.log(error.message);
   }
 };
+
+// call user information
+module.exports.loggedInUserInfo = async (req, res) => {
+  // const { token } = req.body;
+
+  // try {
+  //   const user = jwt.verify(token, JWT_SECRET);
+  //   const tokenUsername = user.username;
+  //  await UserModel.findOne({ username: tokenUsername }).then((data) => {
+  //     res.json({ data: data }).catch(error), console.log(error.message);
+  //   });
+  // } catch (error) {}
+
+  const { username } = req.body;
+  try {
+    await UserModel.findOne({}).then((data) => {
+      res.json({ data: data });
+    });
+  } catch (error) {}
+};
+
+//update user information
+module.exports.updateUser = async (req, res) => {
+  const { _id, name, phone, address, password, isAdmin } = req.body;
+
+  try {
+    await UserModel.findByIdAndUpdate(_id, {
+      name,
+      password,
+      phone,
+      address,
+      isAdmin,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
