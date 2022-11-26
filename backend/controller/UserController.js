@@ -76,16 +76,12 @@ module.exports.loggedInUserInfo = async (req, res) => {
 
 //update user information
 module.exports.updateUser = async (req, res) => {
-  const { _id, name, phone, address, username, password, email, isAdmin } =
-    req.body;
+  const { _id, name, phone, address, password, isAdmin } = req.body;
 
   try {
-    console.log(_id);
     await UserModel.findByIdAndUpdate(_id, {
       name,
-      username,
       password,
-      email,
       phone,
       address,
       isAdmin,
