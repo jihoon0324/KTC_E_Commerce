@@ -13,6 +13,7 @@ const {
 productRouter.get("/", getAllProducts);
 productRouter.get("/:categoryId", getProductsByCategory);
 productRouter.post("/add", addProduct);
-productRouter.route("/:id").put(updateProduct).delete(deleteProduct);
+productRouter.put("/:id", updateProduct);
+productRouter.delete("/:id", deleteProduct);
 
 module.exports = productRouter;
