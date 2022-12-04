@@ -1,4 +1,6 @@
 import React from "react";
+import OrderDetail from "./OrderDetail";
+import "./orderhistory.css";
 
 const OrderHistory = () => {
   return (
@@ -19,6 +21,8 @@ const OrderHistory = () => {
           </tr>
         </tbody>
       </table>
+
+      <OrderDetail />
     </>
   );
 };
