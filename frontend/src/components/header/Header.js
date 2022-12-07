@@ -28,7 +28,7 @@ const Header = () => {
               </NavDropdown.Item>
               <NavDropdown.Item href=''>Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href=''>Logout 은 어디있나 ?</NavDropdown.Item>
+              <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
             </NavDropdown>
             <div>
               <FaShoppingCart size={20} />
