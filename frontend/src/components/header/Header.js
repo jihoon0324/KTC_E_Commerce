@@ -72,9 +72,8 @@ const Header = () => {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
                 </NavDropdown> */}
-                <div>
-                  <FaShoppingCart size={20} />
-                </div>
+
+                <FaShoppingCart size={20} />
               </Nav>
             </Col>
           )}
