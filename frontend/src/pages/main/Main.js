@@ -7,7 +7,7 @@ const Main = () => {
         border: '1px  solid red',
         backgroundColor: 'green',
 
-        height: '5000px',
+        height: '1500px',
       }}
     >
       {' '}
