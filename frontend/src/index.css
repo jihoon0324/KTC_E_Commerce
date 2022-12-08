@@ -1,15 +1,14 @@
-*{
+* {
   font-family: 'Ubuntu', sans-serif;
-  
 }
 
-.pageTitle{
+.pageTitle {
   font-size: 2.3rem;
   font-weight: bold;
   letter-spacing: 4px;
 }
 
 /*grey line below the page title  */
-.titleLine{
-  border-top:0.5px solid #E8E8e8;
+.titleLine {
+  border-top: 0.5px solid #e8e8e8;
 }

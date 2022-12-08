@@ -11,22 +11,14 @@ const Main = () => {
       <main className='mainPage'>
         <Carousel>
           <Carousel.Item>
-            <img
-              className='d-block'
-              src={imageFirst}
-              alt='First slide'
-            />
+            <img className='d-block' src={imageFirst} alt='First slide' />
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className='d-block'
-              src={imageSecond}
-              alt='Second slide'
-            />
+            <img className='d-block' src={imageSecond} alt='Second slide' />
 
             <Carousel.Caption>
               <h3>Second slide label</h3>
@@ -34,11 +26,7 @@ const Main = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
-              className='d-block'
-              src={imageThird}
-              alt='Third slide'
-            />
+            <img className='d-block' src={imageThird} alt='Third slide' />
 
             <Carousel.Caption>
               <h3>Third slide label</h3>
