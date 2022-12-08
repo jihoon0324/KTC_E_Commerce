@@ -37,10 +37,21 @@ const Header = () => {
               </Nav>
             </Col>
             <Col md={{ span: 2, offset: 2 }}>
-              <Nav>
-                <Nav.Link id='logInfo_Link' href='/'>
+              {/* <Nav>
+                <Nav.Link id='log_Link' href='/'>
                   Login
                 </Nav.Link>
+              </Nav> */}
+              <Nav className='big_logged_in'>
+                <NavDropdown id='logged_in_dropdown' title={'nameTest'}>
+                  <NavDropdown.Item href=''>My Page</NavDropdown.Item>
+                  <NavDropdown.Item href='/orderhistory'>
+                    Ore History
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href=''>Something</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
+                </NavDropdown>
               </Nav>
             </Col>
           </Row>
@@ -50,13 +61,13 @@ const Header = () => {
             <Col>
               <Nav>
                 <Link to='/'>
-                  <Navbar.Brand>KTC Shop</Navbar.Brand>
+                  <Navbar.Brand id='small_brand'>KTC Shop</Navbar.Brand>
                 </Link>
               </Nav>
             </Col>
           )}
 
-          <Col id='product_link_main' md={{ span: 5, offset: 4 }}>
+          <Col md={{ span: 5, offset: 3 }}>
             <Nav>
               <Nav.Link className='product_link_list' href='/'>
                 Blouse
@@ -73,7 +84,7 @@ const Header = () => {
             <Col>
               <Nav>
                 {/* <Nav.Link href='/'>Login</Nav.Link> */}
-                <NavDropdown title={'nameTest'} id='basic-nav-dropdown'>
+                <NavDropdown title={'nameTest'} id='logged_in_dropdown'>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History

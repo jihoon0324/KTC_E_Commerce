@@ -29,19 +29,21 @@ header:hover {
   font-size: 65px;
   color: white;
 }
-#logInfo_Link {
+#log_Link {
   line-height: 100px;
   color: white;
 }
-
-#product_link_main {
+.big_logged_in {
+  padding-top: 3rem;
+}
+#logged_in_dropdown {
+  color: white;
+}
+.product_link_list {
+  padding-left: 5rem;
   color: white;
 }
 
-.product_link {
-  color: white;
-}
-#product_link_list {
-  padding-left: 6rem;
+#small_brand {
   color: white;
 }
