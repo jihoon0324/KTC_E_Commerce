@@ -19,6 +19,21 @@ exports.getAllProducts = async (req, res) => {
   return res.status(200).json(products);
 };
 
+// GET product
+exports.getProduct = async (req, res) => {
+  let product;
+
+  // Find all products from DB
+  try {
+    product = await Product.findById(req.params.id);
+  } catch (error) {
+    console.error(error);
+  }
+
+  // Return project if successful
+  return res.status(200).json(product);
+};
+
 // GET products by category
 exports.getProductsByCategory = async (req, res) => {
   let products;
