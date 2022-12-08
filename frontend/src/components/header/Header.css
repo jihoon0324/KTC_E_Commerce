@@ -14,8 +14,10 @@ header {
   color: white;
 }
 
-header:hover,
-header.selected:after {
+header:hover {
   background-color: black;
   transition: 0;
+}
+.inner {
+  background-color: black;
 }

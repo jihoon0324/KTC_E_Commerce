@@ -7,11 +7,14 @@ import { FaShoppingCart } from 'react-icons/fa';
 const Header = () => {
   //   const [nameTest, setNameTest] = useState('KTC');
   const [show, setShow] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const controlNavbar = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 4) {
       setShow(false);
+      setToggle(true);
     } else {
       setShow(true);
+      setToggle(false);
     }
   };
 
@@ -22,7 +25,7 @@ const Header = () => {
     };
   }, []);
   return (
-    <header>
+    <header className={!show ? 'inner' : 'none'}>
       <Container>
         {show && (
           <Row>
@@ -39,7 +42,7 @@ const Header = () => {
           </Row>
         )}
         <Row>
-          {!show && (
+          {toggle && (
             <Col>
               <Nav>
                 <Link to='/'>
@@ -56,7 +59,7 @@ const Header = () => {
               <Nav.Link href='/'>Pants</Nav.Link>
             </Nav>
           </Col>
-          {!show && (
+          {toggle && (
             <Col>
               <Nav>
                 <Nav.Link href='/'>Login</Nav.Link>
