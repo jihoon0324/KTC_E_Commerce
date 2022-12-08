@@ -12,13 +12,36 @@ header {
   );
   transition: transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
   color: white;
+
   z-index: 1;
 }
-
+a:link {
+  text-decoration: none;
+}
 header:hover {
   background-color: black;
   transition: 0;
 }
 .inner {
   background-color: black;
+}
+.brand {
+  font-size: 65px;
+  color: white;
+}
+#logInfo_Link {
+  line-height: 100px;
+  color: white;
+}
+
+#product_link_main {
+  color: white;
+}
+
+.product_link {
+  color: white;
+}
+#product_link_list {
+  padding-left: 6rem;
+  color: white;
 }

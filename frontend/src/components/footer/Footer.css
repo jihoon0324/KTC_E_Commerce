@@ -1,0 +1,12 @@
+footer {
+  background-color: black;
+  color: white;
+}
+.brand {
+  font-size: 65px;
+  color: white;
+}
+
+#contactUs {
+  line-height: 100px;
+}

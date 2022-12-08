@@ -29,15 +29,19 @@ const Header = () => {
       <Container>
         {show && (
           <Row>
-            <Col md={{ span: 5, offset: 5 }}>
+            <Col md={{ span: 4, offset: 4 }}>
               <Nav>
                 <Link to='/'>
-                  <Navbar.Brand>KTC Shop</Navbar.Brand>
+                  <Navbar.Brand className='brand'>KTC Shop</Navbar.Brand>
                 </Link>
               </Nav>
             </Col>
-            <Col>
-              <Nav.Link href='/'>Login</Nav.Link>
+            <Col md={{ span: 2, offset: 2 }}>
+              <Nav>
+                <Nav.Link id='logInfo_Link' href='/'>
+                  Login
+                </Nav.Link>
+              </Nav>
             </Col>
           </Row>
         )}
@@ -52,18 +56,24 @@ const Header = () => {
             </Col>
           )}
 
-          <Col md={{ span: 5, offset: 4 }}>
+          <Col id='product_link_main' md={{ span: 5, offset: 4 }}>
             <Nav>
-              <Nav.Link href='/'>Blouse</Nav.Link>
-              <Nav.Link href='/'>Dress</Nav.Link>
-              <Nav.Link href='/'>Pants</Nav.Link>
+              <Nav.Link className='product_link_list' href='/'>
+                Blouse
+              </Nav.Link>
+              <Nav.Link className='product_link_list' href='/'>
+                Dress
+              </Nav.Link>
+              <Nav.Link className='product_link_list' href='/'>
+                Pants
+              </Nav.Link>
             </Nav>
           </Col>
           {toggle && (
             <Col>
               <Nav>
-                <Nav.Link href='/'>Login</Nav.Link>
-                {/* <NavDropdown title={'nameTest'} id='basic-nav-dropdown'>
+                {/* <Nav.Link href='/'>Login</Nav.Link> */}
+                <NavDropdown title={'nameTest'} id='basic-nav-dropdown'>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
@@ -71,7 +81,7 @@ const Header = () => {
                   <NavDropdown.Item href=''>Something</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
-                </NavDropdown> */}
+                </NavDropdown>
 
                 <FaShoppingCart size={20} />
               </Nav>
