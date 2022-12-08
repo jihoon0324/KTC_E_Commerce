@@ -1,11 +1,23 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(48, 47, 45, 1) 0%,
+    rgba(48, 47, 45, 0.5) 100%
+  );
+  transition: transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  color: white;
 }
 
-header div {
+header:hover {
+  background-color: black;
+  transition: 0;
 }
-
-header div link {
-}
-
-header div navbar.brand {
+.inner {
+  background-color: black;
 }

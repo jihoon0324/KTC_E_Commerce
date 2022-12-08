@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/orderhistory' element={<OrderHistory />} />
-          <Route path='/orderDetail' element={<OrderDetail />} />
+          
         </Routes>
       </Router>
       <Footer />
