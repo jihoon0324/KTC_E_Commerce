@@ -27,14 +27,6 @@ const Main = () => {
           alt='Second slide'
         />
 
-<<<<<<< HEAD
-        height: '1500px',
-      }}
-    >
-      {' '}
-      Main
-    </main>
-=======
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -55,10 +47,10 @@ const Main = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
->>>>>>> a34df18ab7462aaabd25a5bf7f7b0805ae27be75
-  );
-};
 
-
+  )
+}
 
 export default Main;
+
+
