@@ -2,16 +2,17 @@ import React from 'react';
 
 const Main = () => {
   return (
-    <div
+    <main
       style={{
         border: '1px  solid red',
         backgroundColor: 'green',
 
-        height: '500px',
+        height: '5000px',
       }}
     >
+      {' '}
       Main
-    </div>
+    </main>
   );
 };
 
