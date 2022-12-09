@@ -23,7 +23,7 @@ exports.getAllProducts = async (req, res) => {
 exports.getProduct = async (req, res) => {
   let product;
 
-  // Find all products from DB
+  // Find products from DB
   try {
     product = await Product.findById(req.params.id);
   } catch (error) {
