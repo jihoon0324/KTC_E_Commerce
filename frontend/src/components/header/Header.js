@@ -3,7 +3,7 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { FaShoppingCart } from 'react-icons/fa';
-
+import { Helmet } from 'react-helmet-async';
 const Header = () => {
   //   const [nameTest, setNameTest] = useState('KTC');
   const [show, setShow] = useState(true);
@@ -26,6 +26,10 @@ const Header = () => {
   }, []);
   return (
     <header className={!show ? 'inner' : 'none'}>
+      <Helmet>
+        <title> KTC Shop</title>
+      </Helmet>
+
       <Container>
         {show && (
           <Row>
@@ -69,7 +73,7 @@ const Header = () => {
 
           <Col md={toggle ? { span: 4 } : { span: 4, offset: 4 }}>
             <Nav id='product_link_nav'>
-              <Nav.Link className='product_link_list' href='/'>
+              <Nav.Link className='product_link_list' href='/blouse'>
                 Blouse
               </Nav.Link>
               <Nav.Link className='product_link_list' href='/'>
