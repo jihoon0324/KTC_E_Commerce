@@ -1,6 +1,7 @@
 footer {
   background-color: black;
   color: white;
+  text-align: center;
 }
 .brand {
   font-size: 65px;
@@ -8,8 +9,9 @@ footer {
 }
 
 #contactUs {
-  line-height: 60px;
   font-size: 25px;
+  line-height: auto;
+  padding-top: 10px;
 }
 #footer_brand {
   font-size: 35px;

@@ -7,13 +7,11 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col id="footer_brand"sm={8}>KTC Shop</Col>
-          <Col id='contactUs' sm={4}>
-            Contact Us
-          </Col>
+          <Col id='footer_brand'>KTC Shop</Col>
+          <Col id='contactUs'>Contact Us</Col>
         </Row>
         <Row>
-          <Col md={{ span: 6, offset: 4 }}>
+          <Col>
             <FaRegCopyright />
             KTC Shop All rights reserved
           </Col>
