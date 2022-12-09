@@ -8,5 +8,9 @@ footer {
 }
 
 #contactUs {
-  line-height: 100px;
+  line-height: 60px;
+  font-size: 25px;
+}
+#footer_brand {
+  font-size: 35px;
 }

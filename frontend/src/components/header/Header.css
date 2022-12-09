@@ -26,24 +26,37 @@ header:hover {
   background-color: black;
 }
 .brand {
-  font-size: 65px;
+  font-size: 50px;
   color: white;
+  font-weight: bold;
+}
+#brand_nav {
+  justify-content: center;
 }
 #log_Link {
-  line-height: 100px;
+  justify-content: center;
   color: white;
-}
-.big_logged_in {
-  padding-top: 3rem;
-}
-#logged_in_dropdown {
-  color: white;
-}
-.product_link_list {
-  padding-left: 5rem;
-  color: white;
+  font-size: 20px;
+  padding-top: 2rem;
 }
 
+.product_link_list {
+  padding-right: 3rem;
+  padding-left: 2rem;
+  color: white;
+  font-size: 20px;
+}
+#product_link_nav {
+  justify-content: center;
+}
 #small_brand {
+  color: white;
+  font-size: 35px;
+}
+#log_info_small {
+  font-size: 20px;
+  float: right;
+}
+#log_info_text {
   color: white;
 }

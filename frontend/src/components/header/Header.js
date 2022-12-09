@@ -30,7 +30,7 @@ const Header = () => {
         {show && (
           <Row>
             <Col md={{ span: 4, offset: 4 }}>
-              <Nav>
+              <Nav id='brand_nav'>
                 <Link to='/'>
                   <Navbar.Brand className='brand'>KTC Shop</Navbar.Brand>
                 </Link>
@@ -42,8 +42,8 @@ const Header = () => {
                   Login
                 </Nav.Link>
               </Nav> */}
-              <Nav className='big_logged_in'>
-                <NavDropdown id='logged_in_dropdown' title={'nameTest'}>
+              <Nav>
+                <NavDropdown id='log_Link' title={'nameTest'}>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
@@ -67,8 +67,8 @@ const Header = () => {
             </Col>
           )}
 
-          <Col md={{ span: 5, offset: 3 }}>
-            <Nav>
+          <Col md={toggle ? { span: 4 } : { span: 4, offset: 4 }}>
+            <Nav id='product_link_nav'>
               <Nav.Link className='product_link_list' href='/'>
                 Blouse
               </Nav.Link>
@@ -82,9 +82,9 @@ const Header = () => {
           </Col>
           {toggle && (
             <Col>
-              <Nav>
-                {/* <Nav.Link href='/'>Login</Nav.Link> */}
-                <NavDropdown title={'nameTest'} id='logged_in_dropdown'>
+              <Nav id='log_info_small'>
+                {/* <Nav.Link id='log_info_text' href='/'>Login</Nav.Link> */}
+                <NavDropdown id='log_info_text' title={'nameTest'}>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History

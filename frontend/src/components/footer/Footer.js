@@ -7,9 +7,7 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col className='brand' sm={8}>
-            KTC Shop
-          </Col>
+          <Col id="footer_brand"sm={8}>KTC Shop</Col>
           <Col id='contactUs' sm={4}>
             Contact Us
           </Col>
