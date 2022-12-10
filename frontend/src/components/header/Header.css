@@ -30,6 +30,9 @@ header:hover {
   color: white;
   font-weight: bold;
 }
+.brand:hover {
+  color: white;
+}
 #brand_nav {
   justify-content: center;
 }
@@ -46,6 +49,12 @@ header:hover {
   color: white;
   font-size: 20px;
 }
+.product_link_list:hover {
+  text-decoration: underline;
+  color: red;
+  font-weight: bold;
+}
+
 #product_link_nav {
   justify-content: center;
 }
