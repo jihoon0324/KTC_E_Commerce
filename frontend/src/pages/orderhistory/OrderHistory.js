@@ -3,6 +3,39 @@ import OrderList from "./OrderList";
 import OrderDetail from "./OrderDetail";
 import "./orderhistory.css";
 
+const temData = [
+  {
+    id: 12341234,
+    address: "123 street",
+    data: 2022 - 10 - 01,
+    totalPrice: 100,
+    user_Id: 4545,
+    orderItems: [
+      {
+        name: "aa",
+        qty: 1,
+        image: "aaa",
+        price: 100,
+      },
+    ],
+  },
+  {
+    id: 22222222,
+    address: "222 street",
+    data: 2022 - 10 - 02,
+    totalPrice: 200,
+    user_Id: 2222,
+    orderItems: [
+      {
+        name: "ss",
+        qty: 2,
+        image: "sss",
+        price: 200,
+      },
+    ],
+  },
+];
+
 const OrderHistory = () => {
   return (
     <>
@@ -28,7 +61,6 @@ const OrderHistory = () => {
           </tr>
         </tbody>
       </table>
-      <OrderDetail />
     </>
   );
 };
