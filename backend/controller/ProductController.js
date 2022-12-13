@@ -52,7 +52,7 @@ exports.getProductsByCategory = async (req, res) => {
 
 // POST new product
 exports.addProduct = async (req, res) => {
-  const { productName, price, photoUrls, content, totalQty, categoryId } = req.body;
+  const { productName, price, photoUrls, content, tag, totalQty, categoryId } = req.body;
   let product;
 
   try {
@@ -64,6 +64,7 @@ exports.addProduct = async (req, res) => {
       price: price,
       photoUrls: photoUrls,
       content: content,
+      tag: tag,
       totalQty: totalQty,
       category: category,
     });
@@ -93,16 +94,18 @@ exports.deleteProduct = async (req, res) => {
 //Update product
 //PUT /api/products/:id
 exports.updateProduct = async (req, res) => {
-  const { productName, price, photoUrl, content, totalQty, category } =
+  const { productName, price, photoUrls, content, tag, totalQty, orderQty, category } =
     req.body;
 
   const product = await Product.findById(req.params.id);
   try {
     product.productName = productName;
     product.price = price;
-    product.photoUrl = photoUrl;
+    product.photoUrls = photoUrls;
     product.content = content;
+    product.tag = tag;
     product.totalQty = totalQty;
+    product.orderQty = orderQty;
     product.category = category;
 
     const updateProduct = await product.save();

@@ -19,6 +19,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  tag: {
+    type: String,
+    required: true,
+  },
   totalQty: {
     type: Number,
     required: true,
@@ -30,6 +34,10 @@ const ProductSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "Category",
     required: true,
+  },
+  best: {
+    type: Boolean,
+    default: false,
   },
 });
 
