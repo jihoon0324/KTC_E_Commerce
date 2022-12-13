@@ -7,7 +7,7 @@ const temData = [
   {
     id: 12341234,
     address: "123 street",
-    data: 2022 - 10 - 01,
+    date: 20221001,
     totalPrice: 100,
     user_Id: 4545,
     orderItems: [
@@ -22,7 +22,7 @@ const temData = [
   {
     id: 22222222,
     address: "222 street",
-    data: 2022 - 10 - 02,
+    date: 20221002,
     totalPrice: 200,
     user_Id: 2222,
     orderItems: [
@@ -42,12 +42,12 @@ const OrderHistory = () => {
       <div className=" orderHistoryWrap">
         <div className="pageTitle historyTitle">order history</div>
         <hr className="titleLine" />
-        {/* after creating redux store, do uncommented  */}
-        {/* {orders.map((order) => (
+
+        {temData.map((order) => (
           <OrderList key={order._id} order={order} />
-        ))} */}
+        ))}
       </div>
-      <table className="orderLists">
+      {/* <table className="orderLists">
         <tbody className="orderList">
           <tr>
             <td className="orderDate">Nov 22.2022</td>
@@ -60,7 +60,7 @@ const OrderHistory = () => {
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 };

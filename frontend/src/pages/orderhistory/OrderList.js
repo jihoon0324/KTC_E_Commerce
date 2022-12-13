@@ -1,13 +1,13 @@
 import React from "react";
 
-const OrderList = () => {
+const OrderList = ({ order }) => {
   return (
     <>
       <table className="orderLists">
         <tbody className="orderList">
           <tr>
-            <td className="orderDate">Nov 22.2022</td>
-            <td className="orderNumber">22222</td>
+            <td className="orderDate">{order.date}</td>
+            <td className="orderNumber">{order.id}</td>
           </tr>
           <tr>
             <td></td>
