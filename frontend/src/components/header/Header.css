@@ -44,8 +44,6 @@ header:hover {
 }
 
 .product_link_list {
-  padding-right: 3rem;
-  padding-left: 2rem;
   color: white;
   font-size: 20px;
 }
@@ -56,7 +54,7 @@ header:hover {
 }
 
 #product_link_nav {
-  justify-content: center;
+  justify-content: space-between;
 }
 #small_brand {
   color: white;
@@ -68,4 +66,35 @@ header:hover {
 }
 #log_info_text {
   color: white;
+}
+
+.loggedIn_Info {
+  position: relative;
+}
+
+#log_Link,
+.cart {
+  position: relative;
+}
+.cart_icon {
+  position: absolute;
+  top: 50%;
+}
+
+.badge {
+  position: absolute;
+  top: 30%;
+  right: -70%;
+  width: 15px;
+  height: 15px;
+
+  background-color: black;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  z-index: 10;
 }

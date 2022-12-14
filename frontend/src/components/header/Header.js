@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+
 const Header = () => {
   //   const [nameTest, setNameTest] = useState('KTC');
   const [show, setShow] = useState(true);
@@ -25,7 +26,7 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className={!show ? 'inner' : 'none'}>
+    <header className={!show ? 'inner' : ''}>
       <Helmet>
         <title> KTC Shop</title>
       </Helmet>
@@ -33,29 +34,31 @@ const Header = () => {
       <Container>
         {show && (
           <Row>
-            <Col md={{ span: 4, offset: 4 }}>
+            <Col lg={{ span: 4, offset: 4 }} md={{ span: 4 }}>
               <Nav id='brand_nav'>
                 <Link to='/'>
                   <Navbar.Brand className='brand'>KTC Shop</Navbar.Brand>
                 </Link>
               </Nav>
             </Col>
-            <Col md={{ span: 2, offset: 2 }}>
+            <Col lg={{ span: 2, offset: 2 }} md={{ span: 4, offset: 4 }}>
               {/* <Nav>
-                <Nav.Link id='log_Link' href='/'>
-                  Login
-                </Nav.Link>
-              </Nav> */}
+    <Nav.Link id='log_Link' href='/'>
+      Login
+    </Nav.Link>
+  </Nav> */}
               <Nav>
                 <NavDropdown id='log_Link' title={'nameTest'}>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
                   </NavDropdown.Item>
-                  <NavDropdown.Item href=''>Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
                 </NavDropdown>
+
+                <span className='cart'>
+                  <FaShoppingCart className='cart_icon' size={20} />
+                  <span className='badge'>1</span>
+                </span>
               </Nav>
             </Col>
           </Row>
@@ -71,7 +74,7 @@ const Header = () => {
             </Col>
           )}
 
-          <Col md={toggle ? { span: 4 } : { span: 4, offset: 4 }}>
+          <Col lg={toggle ? { span: 4 } : { span: 4, offset: 4 }}>
             <Nav id='product_link_nav'>
               <Nav.Link className='product_link_list' href='/blouse'>
                 Blouse
@@ -93,12 +96,14 @@ const Header = () => {
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
                   </NavDropdown.Item>
-                  <NavDropdown.Item href=''>Something</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href=''> 뭔가 더 넣고 </NavDropdown.Item>
                 </NavDropdown>
-
-                <FaShoppingCart size={20} />
+                <span>
+                  <FaShoppingCart
+                    className='cart_icon'
+                    size={20}
+                  ></FaShoppingCart>{' '}
+                  <span className='badge'>1</span>
+                </span>
               </Nav>
             </Col>
           )}
