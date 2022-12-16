@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Container, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
@@ -9,6 +9,8 @@ const Header = () => {
   //   const [nameTest, setNameTest] = useState('KTC');
   const [show, setShow] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+
   const controlNavbar = () => {
     if (window.scrollY > 4) {
       setShow(false);
@@ -25,6 +27,13 @@ const Header = () => {
       window.removeEventListener('scroll', controlNavbar);
     };
   }, []);
+
+  const navigateToCart = (e) => {
+    e.stopPropagation();
+
+    navigate('/cart');
+  };
+
   return (
     <header className={!show ? 'inner' : ''}>
       <Helmet>
@@ -34,20 +43,20 @@ const Header = () => {
       <Container>
         {show && (
           <Row>
-            <Col lg={{ span: 4, offset: 4 }} md={{ span: 4 }}>
+            <Col lg={{ span: 4, offset: 4 }} md='8'>
               <Nav id='brand_nav'>
                 <Link to='/'>
                   <Navbar.Brand className='brand'>KTC Shop</Navbar.Brand>
                 </Link>
               </Nav>
             </Col>
-            <Col lg={{ span: 2, offset: 2 }} md={{ span: 4, offset: 4 }}>
-              {/* <Nav>
-    <Nav.Link id='log_Link' href='/'>
-      Login
-    </Nav.Link>
-  </Nav> */}
+            <Col lg={{ span: 2, offset: 2 }} md='4'>
               <Nav>
+                <Nav.Link id='log_Link' href='/'>
+                  Login
+                </Nav.Link>
+              </Nav>
+              {/* <Nav>
                 <NavDropdown id='log_Link' title={'nameTest'}>
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
@@ -55,11 +64,11 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <span className='cart'>
+                <span className='cart' onClick={navigateToCart}>
                   <FaShoppingCart className='cart_icon' size={20} />
                   <span className='badge'>1</span>
                 </span>
-              </Nav>
+              </Nav> */}
             </Col>
           </Row>
         )}
@@ -79,10 +88,10 @@ const Header = () => {
               <Nav.Link className='product_link_list' href='/blouse'>
                 Blouse
               </Nav.Link>
-              <Nav.Link className='product_link_list' href='/'>
+              <Nav.Link className='product_link_list' href='/dress'>
                 Dress
               </Nav.Link>
-              <Nav.Link className='product_link_list' href='/'>
+              <Nav.Link className='product_link_list' href='/pants'>
                 Pants
               </Nav.Link>
             </Nav>
@@ -97,12 +106,12 @@ const Header = () => {
                     Ore History
                   </NavDropdown.Item>
                 </NavDropdown>
-                <span>
+                <span className='cart' onClick={navigateToCart}>
                   <FaShoppingCart
-                    className='cart_icon'
+                    className='cart_icon_small'
                     size={20}
                   ></FaShoppingCart>{' '}
-                  <span className='badge'>1</span>
+                  <span className='badge_small'>1</span>
                 </span>
               </Nav>
             </Col>
