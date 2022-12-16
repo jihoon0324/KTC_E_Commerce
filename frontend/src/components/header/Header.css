@@ -102,6 +102,7 @@ header:hover {
 .cart {
   position: relative;
   background-color: green;
+  z-index: 10;
 }
 .cart_icon {
   position: absolute;

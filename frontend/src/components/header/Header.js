@@ -29,7 +29,7 @@ const Header = () => {
   }, []);
 
   const navigateToCart = (e) => {
-    e.stopPropagation();
+    e.preventDefault();
 
     navigate('/cart');
   };
