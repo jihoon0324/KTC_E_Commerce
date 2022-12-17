@@ -39,10 +39,10 @@ const Header = () => {
       <Container>
         <Row>
           <Col
-            className={scrollActive ? 'active_brand' : 'default_brand'}
+            className={scrollActive ? 'active_brand ' : 'default_brand '}
             lg={scrollActive ? { span: 2 } : '8'}
           >
-            <Nav className='test'>
+            <Nav className='brand_Icon'>
               <Link to='/'>
                 <Navbar.Brand
                   className={
@@ -74,7 +74,7 @@ const Header = () => {
 
           <Col
             className={scrollActive ? 'active_userInfo' : 'default_userInfo'}
-            lg={nameTest ? '3' : '1'}
+            lg={nameTest ? '2' : '1'}
           >
             <Nav className='userInfo_nav'>
               {nameTest ? (
@@ -83,7 +83,7 @@ const Header = () => {
                   id='user_loggedIn'
                   title={'nameTest'}
                 >
-                  <NavDropdown.Item href=''>My Page</NavDropdown.Item>
+                  <NavDropdown.Item href='/'>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
                   </NavDropdown.Item>
@@ -98,7 +98,7 @@ const Header = () => {
 
               {nameTest ? (
                 <Nav.Link
-                  className='userInfo'
+                  className='userInfo cartInfo'
                   id='user_cart_info'
                   onClick={navigateToCart}
                 >

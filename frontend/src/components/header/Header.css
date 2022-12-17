@@ -1,5 +1,6 @@
 a:link {
   text-decoration: none;
+  color: unset;
 }
 
 .active_header {
@@ -8,6 +9,12 @@ a:link {
   width: 100%;
   z-index: 1;
   font-weight: bold;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .default_header {
@@ -52,18 +59,18 @@ a:link {
   font-size: 35px;
 }
 .active_brand_Icon {
-  color: yellow;
+  color: white;
   font-size: 35px;
 }
 
-.test {
+.brand_Icon {
   position: relative;
   justify-content: center;
   left: 25%;
 }
 .default_brand_Icon {
   font-size: 50px;
-  color: red;
+  color: white;
 }
 
 .default_product {
@@ -79,10 +86,12 @@ a:link {
   font-size: 20px;
   color: white;
 }
-
+.product_list_link:hover {
+  color: white;
+}
 .product_link_list:hover {
   text-decoration: underline;
-  color: red;
+  color: white;
   font-weight: bold;
 }
 .default_userInfo {
@@ -92,7 +101,6 @@ a:link {
 }
 .userInfo_nav {
   display: inline-block;
-  margin-left: 40px;
 }
 .userInfo {
   display: inline-block;
@@ -103,21 +111,27 @@ a:link {
 }
 
 #user_cart_info {
+  display: inline-block;
   position: relative;
   color: white;
-  right: 25px;
+  right: 20px;
+
   top: -5px;
+}
+.cartInfo {
+  padding: 0;
 }
 
 #user_cart_icon {
   position: absolute;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 .cart_badge {
   position: relative;
   top: 7px;
-  right: -12px;
+  right: -20px;
   width: 15px;
   height: 15px;
 

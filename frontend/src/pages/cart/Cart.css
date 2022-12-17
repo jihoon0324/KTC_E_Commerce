@@ -1,0 +1,38 @@
+.nav_Cover {
+  height: 150px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+thead tr {
+  position: relative;
+  text-align: end;
+}
+tbody tr {
+  border-top: solid #e8e8e8 3px;
+}
+tbody tr td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+tbody tr td div {
+  border: solid gray;
+  height: 150px;
+  width: 150px;
+  margin: 0;
+  display: inline-block;
+}
+
+tfoot tr {
+  position: relative;
+  text-align: end;
+}
+
+tfoot tr td button {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
