@@ -37,6 +37,10 @@ const temData = [
 ];
 
 const OrderHistory = () => {
+  const openModal = ({ order }) => {
+    console.log({ order });
+  };
+
   return (
     <>
       <div className=" orderHistoryWrap">
@@ -53,7 +57,12 @@ const OrderHistory = () => {
               <tr>
                 <td></td>
                 <td>
-                  <button className="viewOrderDetail">Veiw Order</button>
+                  <button
+                    className="viewOrderDetail"
+                    onClick={() => openModal({ order })}
+                  >
+                    Veiw Order
+                  </button>
                 </td>
               </tr>
             </tbody>
