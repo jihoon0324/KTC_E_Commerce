@@ -1,5 +1,5 @@
 import React from "react";
-import OrderList from "./OrderList";
+// import OrderList from "./OrderList";
 import OrderDetail from "./OrderDetail";
 import "./orderhistory.css";
 
@@ -44,23 +44,23 @@ const OrderHistory = () => {
         <hr className="titleLine" />
 
         {temData.map((order) => (
-          <OrderList key={order._id} order={order} />
+          <table className="orderLists" key={order.id}>
+            <tbody className="orderList">
+              <tr>
+                <td className="orderDate">{order.date}</td>
+                <td className="orderNumber">{order.id}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <button className="viewOrderDetail">Veiw Order</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         ))}
+        <OrderDetail />
       </div>
-      {/* <table className="orderLists">
-        <tbody className="orderList">
-          <tr>
-            <td className="orderDate">Nov 22.2022</td>
-            <td className="orderNumber">22222</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <button className="viewOrderDetail">Veiw Order</button>
-            </td>
-          </tr>
-        </tbody>
-      </table> */}
     </>
   );
 };

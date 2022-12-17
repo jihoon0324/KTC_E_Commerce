@@ -1,4 +1,5 @@
 import React from "react";
+import OrderDetail from "./OrderDetail";
 
 const OrderList = ({ order }) => {
   return (
@@ -17,6 +18,7 @@ const OrderList = ({ order }) => {
           </tr>
         </tbody>
       </table>
+      {/* <OrderDetail /> */}
     </>
   );
 };
