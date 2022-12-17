@@ -6,18 +6,16 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 
 const Header = () => {
-  //   const [nameTest, setNameTest] = useState('KTC');
-  const [show, setShow] = useState(true);
-  const [toggle, setToggle] = useState(false);
+  const [nameTest, setNameTest] = useState(true);
+
+  const [scrollActive, setScrollActive] = useState(false);
   const navigate = useNavigate();
 
   const controlNavbar = () => {
     if (window.scrollY > 4) {
-      setShow(false);
-      setToggle(true);
+      setScrollActive(true);
     } else {
-      setShow(true);
-      setToggle(false);
+      setScrollActive(false);
     }
   };
 
@@ -28,94 +26,93 @@ const Header = () => {
     };
   }, []);
 
-  const navigateToCart = (e) => {
-    e.preventDefault();
-
+  const navigateToCart = () => {
     navigate('/cart');
   };
 
   return (
-    <header className={!show ? 'inner' : ''}>
+    <header className={scrollActive ? 'active_header' : 'default_header'}>
       <Helmet>
         <title> KTC Shop</title>
       </Helmet>
 
       <Container>
-        {show && (
-          <Row>
-            <Col lg={{ span: 4, offset: 4 }} md='8'>
-              <Nav id='brand_nav'>
-                <Link to='/'>
-                  <Navbar.Brand className='brand'>KTC Shop</Navbar.Brand>
-                </Link>
-              </Nav>
-            </Col>
-            <Col lg={{ span: 2, offset: 2 }} md='4'>
-              <Nav>
-                <Nav.Link id='log_Link' href='/'>
-                  Login
-                </Nav.Link>
-              </Nav>
-              {/* <Nav>
-                <NavDropdown id='log_Link' title={'nameTest'}>
-                  <NavDropdown.Item href=''>My Page</NavDropdown.Item>
-                  <NavDropdown.Item href='/orderhistory'>
-                    Ore History
-                  </NavDropdown.Item>
-                </NavDropdown>
-
-                <span className='cart' onClick={navigateToCart}>
-                  <FaShoppingCart className='cart_icon' size={20} />
-                  <span className='badge'>1</span>
-                </span>
-              </Nav> */}
-            </Col>
-          </Row>
-        )}
         <Row>
-          {toggle && (
-            <Col>
-              <Nav>
-                <Link to='/'>
-                  <Navbar.Brand id='small_brand'>KTC Shop</Navbar.Brand>
-                </Link>
-              </Nav>
-            </Col>
-          )}
+          <Col
+            className={scrollActive ? 'active_brand' : 'default_brand'}
+            lg={scrollActive ? { span: 2 } : '8'}
+          >
+            <Nav className='test'>
+              <Link to='/'>
+                <Navbar.Brand
+                  className={
+                    scrollActive ? 'active_brand_Icon' : 'default_brand_Icon'
+                  }
+                >
+                  KTC Shop
+                </Navbar.Brand>
+              </Link>
+            </Nav>
+          </Col>
 
-          <Col lg={toggle ? { span: 4 } : { span: 4, offset: 4 }}>
-            <Nav id='product_link_nav'>
-              <Nav.Link className='product_link_list' href='/blouse'>
-                Blouse
-              </Nav.Link>
-              <Nav.Link className='product_link_list' href='/dress'>
+          <Col
+            className={scrollActive ? '' : 'default_product'}
+            lg={scrollActive ? '6' : { span: 6, offset: 3 }}
+          >
+            <Nav className='product_list'>
+              <Nav.Link className='product_list_link' href='/dress'>
                 Dress
               </Nav.Link>
-              <Nav.Link className='product_link_list' href='/pants'>
+              <Nav.Link className='product_list_link' href='/blouse'>
+                Blouse
+              </Nav.Link>
+              <Nav.Link className='product_list_link' href='/pants'>
                 Pants
               </Nav.Link>
             </Nav>
           </Col>
-          {toggle && (
-            <Col>
-              <Nav id='log_info_small'>
-                {/* <Nav.Link id='log_info_text' href='/'>Login</Nav.Link> */}
-                <NavDropdown id='log_info_text' title={'nameTest'}>
+
+          <Col
+            className={scrollActive ? 'active_userInfo' : 'default_userInfo'}
+            lg={nameTest ? '3' : '1'}
+          >
+            <Nav className='userInfo_nav'>
+              {nameTest ? (
+                <NavDropdown
+                  className='userInfo'
+                  id='user_loggedIn'
+                  title={'nameTest'}
+                >
                   <NavDropdown.Item href=''>My Page</NavDropdown.Item>
                   <NavDropdown.Item href='/orderhistory'>
                     Ore History
                   </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href='/'>Log out</NavDropdown.Item>
                 </NavDropdown>
-                <span className='cart' onClick={navigateToCart}>
+              ) : (
+                <Nav.Link className='userInfo' href='/login'>
+                  Login
+                </Nav.Link>
+              )}
+
+              {nameTest ? (
+                <Nav.Link
+                  className='userInfo'
+                  id='user_cart_info'
+                  onClick={navigateToCart}
+                >
                   <FaShoppingCart
-                    className='cart_icon_small'
+                    id='user_cart_icon'
                     size={20}
                   ></FaShoppingCart>{' '}
-                  <span className='badge_small'>1</span>
-                </span>
-              </Nav>
-            </Col>
-          )}
+                  <span className='cart_badge'>1</span>
+                </Nav.Link>
+              ) : (
+                ''
+              )}
+            </Nav>
+          </Col>
         </Row>
       </Container>
     </header>

@@ -7,7 +7,7 @@ import OrderHistory from './pages/orderhistory/OrderHistory';
 import ProductDetail from './pages/productDetail/ProductDetail';
 //! page 들이 많이 질것 같아서 이런방법으로 하면  import 부분이 조금더  간결해 집니다.
 import { Header, Footer } from './components/';
-import { Blouse, Pants, Dress, Cart } from './pages/';
+import { Blouse, Pants, Dress, Cart, Login } from './pages/';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path='/pants' element={<Pants />} />
           <Route path='/dress' element={<Dress />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </Router>
       <Footer />
