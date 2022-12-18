@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import OrderList from "./OrderList";
 import OrderDetail from "./OrderDetail";
 import "./orderhistory.css";
@@ -37,8 +37,14 @@ const temData = [
 ];
 
 const OrderHistory = () => {
-  const openModal = ({ order }) => {
-    console.log({ order });
+  const [modal, setModal] = useState(false);
+  const [modalData, setModalData] = useState([]);
+
+  const openModal = (order) => {
+    setModalData(order);
+    console.log(order);
+    console.log(modalData);
+    return setModal(true);
   };
 
   return (
@@ -47,9 +53,9 @@ const OrderHistory = () => {
         <div className="pageTitle historyTitle">order history</div>
         <hr className="titleLine" />
 
-        {temData.map((order) => (
+        {temData.map((order, index) => (
           <table className="orderLists" key={order.id}>
-            <tbody className="orderList">
+            <tbody clas sName="orderList">
               <tr>
                 <td className="orderDate">{order.date}</td>
                 <td className="orderNumber">{order.id}</td>
@@ -59,7 +65,7 @@ const OrderHistory = () => {
                 <td>
                   <button
                     className="viewOrderDetail"
-                    onClick={() => openModal({ order })}
+                    onClick={() => openModal(order)}
                   >
                     Veiw Order
                   </button>
@@ -68,7 +74,7 @@ const OrderHistory = () => {
             </tbody>
           </table>
         ))}
-        <OrderDetail />
+        {modal === true ? <OrderDetail order={modalData} /> : ""}
       </div>
     </>
   );

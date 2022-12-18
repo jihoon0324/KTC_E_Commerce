@@ -1,12 +1,12 @@
 import React from "react";
 
-const OrderDetail = () => {
+const OrderDetail = ({ order }) => {
   return (
     <>
       <div className="pageTitle purchaseListTitle">purchases list</div>
       <div className="orderIDandDate">
-        <span className="orderID">mongoDB ID here</span>
-        <span className="orderDate">order date here</span>
+        <span className="orderID">{order.address}</span>
+        <span className="orderDate">{order.date}</span>
       </div>
       <div className="shippingInfo">
         <div className="shippingTitle">shipping</div>
