@@ -10,16 +10,19 @@ a:link {
   z-index: 1;
   font-weight: bold;
 }
-.header {
-  position: absolute;
+header {
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
 }
-
+header:hover {
+  background-color: black;
+  transition: 0;
+}
 .default_header {
   font-weight: bold;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
