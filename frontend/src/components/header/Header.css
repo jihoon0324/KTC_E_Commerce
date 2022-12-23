@@ -51,7 +51,9 @@ header:hover {
   align-items: center;
   font-weight: bold;
 }
-
+.test {
+  display: flex;
+}
 .default_brand {
   order: 1;
   justify-content: center;
@@ -69,14 +71,17 @@ header:hover {
 .brand_Icon {
   position: relative;
   justify-content: center;
-  left: 25%;
+  left: 10%;
 }
 .default_brand_Icon {
+  display: inline-block;
+  width: 1100px;
   font-size: 50px;
   color: white;
 }
 
 .default_product {
+  flex-direction: column-reverse;
   display: block;
   order: 3;
 }
@@ -98,6 +103,7 @@ header:hover {
   font-weight: bold;
 }
 .default_userInfo {
+  display: inline-block;
   order: 2;
 }
 .active_userInfo {
@@ -147,4 +153,34 @@ header:hover {
   font-size: 0.7rem;
   font-weight: 600;
   z-index: 10;
+}
+
+@media only screen and (max-width: 1400px) {
+  .default_brand_Icon {
+    display: inline-block;
+    width: 800px;
+    font-size: 50px;
+    color: white;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .default_brand_Icon {
+    display: inline-block;
+    width: 600px;
+    font-size: 50px;
+    color: white;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .default_brand_Icon {
+    display: inline-block;
+    width: 300px;
+    font-size: 50px;
+    color: white;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .userInfo_nav {
+    display: none;
+  }
 }

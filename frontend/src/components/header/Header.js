@@ -6,11 +6,9 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const Header = () => {
-  const [nameTest, setNameTest] = useState(true);
-
+  const [nameTest, setNameTest] = useState(false);
   const [scrollActive, setScrollActive] = useState(false);
   const navigate = useNavigate();
-
   const controlNavbar = () => {
     if (window.scrollY > 4) {
       setScrollActive(true);
@@ -18,14 +16,12 @@ const Header = () => {
       setScrollActive(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
-
   const navigateToCart = () => {
     navigate("/cart");
   };
@@ -35,13 +31,9 @@ const Header = () => {
       <Helmet>
         <title> KTC Shop</title>
       </Helmet>
-
       <Container>
         <Row>
-          <Col
-            className={scrollActive ? "active_brand " : "default_brand "}
-            lg={scrollActive ? { span: 2 } : "8"}
-          >
+          <Col className={scrollActive ? "active_brand " : "default_brand "}>
             <Nav className="brand_Icon">
               <Link to="/">
                 <Navbar.Brand
@@ -54,7 +46,6 @@ const Header = () => {
               </Link>
             </Nav>
           </Col>
-
           <Col
             className={scrollActive ? "" : "default_product"}
             lg={scrollActive ? "6" : { span: 6, offset: 3 }}
@@ -71,10 +62,8 @@ const Header = () => {
               </Nav.Link>
             </Nav>
           </Col>
-
           <Col
             className={scrollActive ? "active_userInfo" : "default_userInfo"}
-            lg={nameTest ? "2" : "1"}
           >
             <Nav className="userInfo_nav">
               {nameTest ? (
@@ -95,7 +84,6 @@ const Header = () => {
                   Login
                 </Nav.Link>
               )}
-
               {nameTest ? (
                 <Nav.Link
                   className="userInfo cartInfo"
