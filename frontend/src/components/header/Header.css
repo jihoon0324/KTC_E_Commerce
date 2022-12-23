@@ -103,7 +103,9 @@ header:hover {
   font-weight: bold;
 }
 .default_userInfo {
-  display: inline-block;
+  display: flex;
+  position: relative;
+  justify-content: end;
   order: 2;
 }
 .active_userInfo {
@@ -171,12 +173,15 @@ header:hover {
     color: white;
   }
 }
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1000px) {
   .default_brand_Icon {
     display: inline-block;
     width: 300px;
     font-size: 50px;
     color: white;
+  }
+  .default_product {
+    display: block;
   }
 }
 @media only screen and (max-width: 768px) {
