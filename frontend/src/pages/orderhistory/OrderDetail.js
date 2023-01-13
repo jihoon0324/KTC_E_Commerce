@@ -1,8 +1,11 @@
 import React from "react";
 
-const OrderDetail = ({ order }) => {
+const OrderDetail = ({ order, closeModal }) => {
   return (
     <>
+      <button className="closeBtn" onClick={() => closeModal(false)}>
+        X
+      </button>
       <div className="pageTitle purchaseListTitle">purchases list</div>
       <div className="orderIDandDate">
         <span className="orderID">{order.address}</span>

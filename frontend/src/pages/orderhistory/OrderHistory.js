@@ -74,7 +74,11 @@ const OrderHistory = () => {
             </tbody>
           </table>
         ))}
-        {modal === true ? <OrderDetail order={modalData} /> : ""}
+        {modal === true ? (
+          <OrderDetail order={modalData} closeModal={setModal} />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
