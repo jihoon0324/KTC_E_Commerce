@@ -8,17 +8,16 @@ const Cards = (dress) => {
 
   console.log(dress.value);
   const products = useSelector((state) => ({ ...state.products }));
-
+  console.log(products);
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
 
   return (
     <div className="card_panel">
-      <div className="photo_list">Image</div>
-      <div className="photo_list">Image</div>
-      <div className="photo_list">Image</div>
-      <div className="photo_list">Image</div>
+      {products.productList.map((item, index) => (
+        <div className="photo_list">{item} </div>
+      ))}
     </div>
   );
 };

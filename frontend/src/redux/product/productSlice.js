@@ -19,14 +19,14 @@ const initialState = {
 const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {
-    // getAllProducts(state, action) {
-    //   state.productList = action.payload;
-    // },
-    getDetailProduct(state, action) {
-      state.product = action.payload;
-    },
-  },
+  // reducers: {
+  //   getAllProducts(state, action) {
+  //     state.productList = action.payload;
+  //   },
+  //   getDetailProduct(state, action) {
+  //     state.product = action.payload;
+  //   },
+  // },
   extraReducers: {
     [getAllProducts.pending]: (state, action) => {
       state.loading = true;
