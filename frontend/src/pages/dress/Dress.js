@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Cards from "../../components/cards/Cards";
 
 const Dress = () => {
-  return <div>Dress</div>;
+  return (
+    <div>
+      <Cards value="dress" />
+    </div>
+  );
 };
 
 export default Dress;

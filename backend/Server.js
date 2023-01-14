@@ -16,12 +16,11 @@ const connection = require("./database/db");
 connection();
 
 app.use(express.json());
-// 이거 뭐임?  밑에거 두개
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/order", OrderRouter);
 app.use("/user", UserRouter);
-app.use("/api/products", productRouter);
+app.use("/products", productRouter);
 
 app.listen(PORT, () => console.log(`Listening on : ${PORT}`));

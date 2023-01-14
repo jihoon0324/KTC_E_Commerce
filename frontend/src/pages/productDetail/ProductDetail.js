@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { productActions } from "../../utils/product/productSlice";
+import { productActions } from "../../redux/product/productSlice";
 import axios from "axios";
 import "./ProductDetail.css";
 
@@ -36,7 +36,7 @@ const ProductDetail = () => {
       setScrollActive(false);
     }
 
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
       setScrollActive(false);
     }
   };
@@ -93,7 +93,11 @@ const ProductDetail = () => {
       ) : (
         <></>
       )}
-      <div className={"buyBtn" + (scrollActive ? " activeBuyBtn" : " nonActiveBuyBtn")}>
+      <div
+        className={
+          "buyBtn" + (scrollActive ? " activeBuyBtn" : " nonActiveBuyBtn")
+        }
+      >
         <div>{product?.productName}</div>
         <div>BUY</div>
       </div>
