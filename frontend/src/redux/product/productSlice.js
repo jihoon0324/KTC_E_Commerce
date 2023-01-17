@@ -5,6 +5,7 @@ import * as api from "../api";
 const getAllProducts = createAsyncThunk("product/getAllProducts", async () => {
   try {
     const response = await api.getAllProducts();
+    console.log("getall");
     return response.data;
   } catch (err) {
     return err.data;
@@ -13,7 +14,7 @@ const getAllProducts = createAsyncThunk("product/getAllProducts", async () => {
 
 const initialState = {
   productList: [],
-  product: null,
+  product: {},
 };
 
 const productSlice = createSlice({
